@@ -1,0 +1,160 @@
+:root {
+--white: rgb(255, 255, 255);        
+
+--stone-100: rgb(242, 231, 224);    
+--stone-150: rgb(235, 227, 222);    
+--stone-600: rgb(102, 92, 84);      
+--stone-900: rgb(49, 46, 43);       
+
+--brown-800: rgb(139, 78, 53);      
+
+--rose-800: rgb(114, 40, 76);       
+--rose-50: rgb(255, 241, 250);      
+}
+
+body {
+  background-color: var(--stone-150);
+  font-size: 16px;
+  color: var(--stone-900);
+  margin: 0;
+  padding: 0;
+}
+
+.recipe {
+  background-color: var(--white);
+  box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.48);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+}
+.image-recipe {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+ol li::marker {
+    color: var(--brown-800); /* Cambia solo el color del número */
+    font-weight: bold; /* Opcional: si quieres que los números sean negritas */
+}
+
+.nutrition-row {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 10px 0; /* Espaciado entre filas */
+}
+
+.nutrient-name, 
+.nutrient-value {
+    display: inline-block; /* Asegura que estén en la misma línea */
+    padding: 0 5px; /* Pequeño espaciado interno (opcional) */
+}
+
+.nutrient-name {
+    text-align: left;
+    color: var(--stone-600);
+}
+
+.nutrient-value {
+    text-align: right;
+    color: var(--brown-800);
+    font-weight: bold;
+}
+
+
+h1 {
+    font-family: 'Young Serif', serif;
+    color: var(--stone-900);
+    margin-bottom: 15px;
+}
+
+.preparacion {
+    background-color: var(--rose-50);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.preparacion h4 {
+    color: var(--rose-800);
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--brown-800);
+    font-family: 'Young Serif', serif;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: var(--stone-600);
+    padding-left: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--stone-100);
+    margin: 25px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+  }
+  
+  .recipe {
+    max-width: 100%;
+    margin: 0;
+    padding: 0; /* Cambiamos a 0 el padding general */
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .image-recipe {
+    width: 100vw;
+    margin: 0;
+    max-width: 100vw;
+    border-radius: 0;
+    display: block;
+    /* Eliminamos transform y position que causaban problemas */
+  }
+  
+  /* Añadimos un contenedor interno para el contenido */
+  .recipe-content {
+    padding: 20px;
+  }
+  
+  /* Movemos todos los elementos de contenido dentro del nuevo contenedor */
+  h1, .preparacion, h3, ul, ol, .nutrition-row, hr {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  /* Ajustes específicos para mantener la maquetación */
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .preparacion {
+    margin: 15px 20px;
+  }
+  
+  .nutrition-row {
+    flex-wrap: nowrap;
+  }
+  
+  .nutrient-name, .nutrient-value {
+    white-space: nowrap;
+  }
+}
